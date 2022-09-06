@@ -65,24 +65,24 @@ class Ui_MainProtoV2(object):
         self.grpSabana.setEnabled(True)
         self.grpSabana.setGeometry(QtCore.QRect(10, 10, 381, 101))
         self.grpSabana.setObjectName("grpSabana")
-        self.label_4 = QtWidgets.QLabel(self.grpSabana)
-        self.label_4.setGeometry(QtCore.QRect(205, 45, 81, 16))
-        self.label_4.setObjectName("label_4")
+        # self.label_4 = QtWidgets.QLabel(self.grpSabana)
+        # self.label_4.setGeometry(QtCore.QRect(205, 45, 81, 16))
+        # self.label_4.setObjectName("label_4")
         self.label_3 = QtWidgets.QLabel(self.grpSabana)
         self.label_3.setGeometry(QtCore.QRect(10, 20, 91, 16))
         self.label_3.setObjectName("label_3")
         self.cmbMetodo = QtWidgets.QComboBox(self.grpSabana)
         self.cmbMetodo.setEnabled(True)
-        self.cmbMetodo.setGeometry(QtCore.QRect(255, 70, 113, 22))
+        self.cmbMetodo.setGeometry(QtCore.QRect(255, 45, 113, 22))
         self.cmbMetodo.setObjectName("cmbMetodo")
         self.cmbMetodo.addItem("")
         self.cmbMetodo.addItem("")
-        self.txtCorrida = QtWidgets.QLineEdit(self.grpSabana)
-        self.txtCorrida.setEnabled(True)
-        self.txtCorrida.setGeometry(QtCore.QRect(255, 45, 113, 20))
-        self.txtCorrida.setObjectName("txtCorrida")
+        # self.txtCorrida = QtWidgets.QLineEdit(self.grpSabana)
+        # self.txtCorrida.setEnabled(True)
+        # self.txtCorrida.setGeometry(QtCore.QRect(255, 45, 113, 20))
+        # self.txtCorrida.setObjectName("txtCorrida")
         self.label_5 = QtWidgets.QLabel(self.grpSabana)
-        self.label_5.setGeometry(QtCore.QRect(205, 70, 81, 16))
+        self.label_5.setGeometry(QtCore.QRect(205, 45, 81, 16))
         self.label_5.setObjectName("label_5")
         self.txtModelo = QtWidgets.QLineEdit(self.grpSabana)
         self.txtModelo.setEnabled(True)
@@ -162,7 +162,7 @@ class Ui_MainProtoV2(object):
         
         self.sabana["MODELO"]=""
         self.sabana["VERSION"]=""
-        self.sabana["CORRIDA"]=""
+        # self.sabana["CORRIDA"]=""
         self.sabana["NOMBRE_SABANA"]=""
         self.sabana["DIMENSIONES"]=[]
         self.sabana["METODO"]=""
@@ -241,11 +241,11 @@ class Ui_MainProtoV2(object):
         self.btnNuevoQuery.setText(_translate("MainProtoV2", "Nueva columna \n"
 "query"))
         self.grpSabana.setTitle(_translate("MainProtoV2", "Sabana"))
-        self.label_4.setText(_translate("MainProtoV2", "Corrida: "))
+        # self.label_4.setText(_translate("MainProtoV2", "Corrida: "))
         self.label_3.setText(_translate("MainProtoV2", "Nombre: "))
         self.cmbMetodo.setItemText(0, _translate("MainProtoV2", "MERGE"))
         self.cmbMetodo.setItemText(1, _translate("MainProtoV2", "COMBINAR"))
-        self.txtCorrida.setPlaceholderText(_translate("MainProtoV2", "Por asignar..."))
+        # self.txtCorrida.setPlaceholderText(_translate("MainProtoV2", "Por asignar..."))
         self.label_5.setText(_translate("MainProtoV2", "Metodo: "))
         self.txtModelo.setPlaceholderText(_translate("MainProtoV2", "Por asignar..."))
         self.txtVersion.setPlaceholderText(_translate("MainProtoV2", "Por asignar..."))
@@ -542,7 +542,7 @@ class Ui_MainProtoV2(object):
         self.txtNombreSabana.setText(self.sabana["NOMBRE_SABANA"])
         self.txtModelo.setText(self.sabana["MODELO"])
         self.txtVersion.setText(self.sabana["VERSION"])
-        self.txtCorrida.setText(self.sabana["CORRIDA"])
+        # self.txtCorrida.setText(self.sabana["CORRIDA"])
         if(self.sabana["METODO"]=="MERGE"):
             self.cmbMetodo.setCurrentIndex(0)
         else:
@@ -623,13 +623,13 @@ class Ui_MainProtoV2(object):
             self.error_dialog.showMessage("No se incluyó un nombre de version. Se cancela la operación de guardado")
             return
         
-        # nombre de la corrida
-        if(self.txtCorrida.text()):
-            self.sabana["CORRIDA"]=self.txtCorrida.text()
-        else:
-            self.statusBar.showMessage("No se incluyó un nombre de corrida")
-            self.error_dialog.showMessage("No se incluyó un nombre de corrida. Se cancela la operación de guardado")
-            return
+        # # nombre de la corrida
+        # if(self.txtCorrida.text()):
+        #     self.sabana["CORRIDA"]=self.txtCorrida.text()
+        # else:
+        #     self.statusBar.showMessage("No se incluyó un nombre de corrida")
+        #     self.error_dialog.showMessage("No se incluyó un nombre de corrida. Se cancela la operación de guardado")
+        #     return
         
         # columnas 
         if(self.lstColumnas.count()<1):
@@ -662,7 +662,7 @@ class Ui_MainProtoV2(object):
     def LimpiarControles(self):
         self.grpColumnas.setEnabled(True)
         self.grpSabana.setEnabled(True)
-        self.txtCorrida.setText("")
+        # self.txtCorrida.setText("")
         self.txtModelo.setText("")
         self.txtNombreSabana.setText("")
         self.txtVersion.setText("")
