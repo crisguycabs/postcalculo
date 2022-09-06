@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainProtoV2</class>
+ <widget class="QMainWindow" name="MainProtoV2">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>355</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>355</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>400</width>
+    <height>355</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Modulo de PostCalculo BetaV2</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>ecp.jpg</normaloff>ecp.jpg</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="grpColumnas">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>381</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Colección de Columnas</string>
+    </property>
+    <widget class="QListWidget" name="lstColumnas">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>20</y>
+       <width>251</width>
+       <height>131</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnEditar">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>160</y>
+       <width>101</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Editar Columna</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnBorrar">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>160</y>
+       <width>101</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Eliminar Columna</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnNuevoParametro">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Nueva columna 
+parametro\formula</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnNuevoQuery">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Nueva columna 
+query</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="grpSabana">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>381</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Sabana</string>
+    </property>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>205</x>
+       <y>45</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Corrida: </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Nombre: </string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cmbMetodo">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>255</x>
+       <y>70</y>
+       <width>113</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>MERGE</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>COMBINAR</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLineEdit" name="txtCorrida">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>255</x>
+       <y>45</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Por asignar...</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>205</x>
+       <y>70</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Metodo: </string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtModelo">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>45</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Por asignar...</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtVersion">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>70</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Por asignar...</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtNombreSabana">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>20</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="placeholderText">
+      <string>Por asignar...</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>45</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Modelo:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Version:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnModAbstracto">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>255</x>
+       <y>20</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Seleccionar Modelo</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="actionNuevo_JSON"/>
+    <addaction name="actionAbrir_JSON"/>
+    <addaction name="separator"/>
+    <addaction name="actionGuardar_JSON"/>
+    <addaction name="actionGuardar_como"/>
+    <addaction name="separator"/>
+    <addaction name="actionCerrar"/>
+   </widget>
+   <widget class="QMenu" name="menuAcerca">
+    <property name="title">
+     <string>Acerca de...</string>
+    </property>
+    <addaction name="actionAcerca_de_Modulo_de_Postcalculo"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+   <addaction name="menuAcerca"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionNuevo_JSON">
+   <property name="text">
+    <string>Nuevo JSON</string>
+   </property>
+  </action>
+  <action name="actionAbrir_JSON">
+   <property name="text">
+    <string>Abrir JSON</string>
+   </property>
+  </action>
+  <action name="actionGuardar_JSON">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Guardar JSON</string>
+   </property>
+  </action>
+  <action name="actionGuardar_como">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Guardar como...</string>
+   </property>
+  </action>
+  <action name="actionCerrar">
+   <property name="text">
+    <string>Cerrar</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de">
+   <property name="text">
+    <string>Acerca de...</string>
+   </property>
+  </action>
+  <action name="actionAcerca_de_Modulo_de_Postcalculo">
+   <property name="text">
+    <string>Acerca de Modulo de Postcalculo</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>txtNombreSabana</tabstop>
+  <tabstop>txtModelo</tabstop>
+  <tabstop>txtVersion</tabstop>
+  <tabstop>txtCorrida</tabstop>
+  <tabstop>cmbMetodo</tabstop>
+  <tabstop>btnModAbstracto</tabstop>
+  <tabstop>btnNuevoParametro</tabstop>
+  <tabstop>btnNuevoQuery</tabstop>
+  <tabstop>lstColumnas</tabstop>
+  <tabstop>btnEditar</tabstop>
+  <tabstop>btnBorrar</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

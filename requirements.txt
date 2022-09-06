@@ -1,0 +1,7 @@
+python==3.6
+pyqt5
+pandas
+openpyxl
+tk
+pyqt5-tools
+PyQt5Designer
