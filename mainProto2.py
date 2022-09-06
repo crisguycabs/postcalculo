@@ -228,7 +228,7 @@ class Ui_MainProtoV2(object):
         '''
         self.btnBorrar.clicked.connect(self.EliminarColumna)
         
-        #%% 
+        #%% retranslateUI
 
     def retranslateUi(self, MainProtoV2):
         _translate = QtCore.QCoreApplication.translate
@@ -725,37 +725,46 @@ class Ui_MainProtoV2(object):
         for i, row in enumerate(sheet.iter_rows(values_only=True)):
             if i != 0:
                 word=row[1]
+                sw=False
                 if (word.find("VARIABLE")!=-1):
                     
-                    # if(row[6]==None):
-                    #     row[6]="NA"
-                    # if(row[3]==None):
-                    #     row[3]="NA"
-                        
-                    self.l[n]=("variable",row[2],row[3],row[6])                    
-                    n=n+1
+                    tipo_dato="variable"
+                    sw=True                    
                     
                 elif ((word.find("PARAMETER")!=-1) or (word.find("TABLE")!=-1)):
                     
-                    # if(row[6]==None):
-                    #     row[6]="NA"
-                    # if(row[3]==None):
-                    #     row[3]="NA"
+                    tipo_dato="parameter"
+                    sw=True
                     
-                    self.l[n]=("parameter",row[2],row[3],row[6])
-                    n=n+1    
+                if sw==True:   
+                    nombre_dato = row[2]
+                    if nombre_dato==None:
+                        nombre_dato=""
+                        
+                    dimensiones = row[3]
+                    if dimensiones==None:
+                        dimensiones=""
+                        
+                    categoria = row[6]
+                    if categoria==None:
+                        categoria="Sin Categoria"
+                        
+                    self.l[n]=(tipo_dato,nombre_dato,dimensiones,categoria)
+                        
+                    n=n+1                
+                
 
         # algunas filas quedan vacias, se eliminan
         self.l[n:sheet.max_row]=[]
                 
         self.data=pd.DataFrame(data=self.l[1:], index=None, columns=self.l[0])
         
-        # se corrigen los NoneType
-        for i in range(len(self.data)):
-            if self.data.iloc[i,2] is None:
-                self.data.iloc[i,2]=""
-            if self.data.iloc[i,3] is None:
-                self.data.iloc[i,3]=""
+        # # se corrigen los NoneType
+        # for i in range(len(self.data)):
+        #     if self.data.iloc[i,2] is None:
+        #         self.data.iloc[i,2]=""
+        #     if self.data.iloc[i,3] is None:
+        #         self.data.iloc[i,3]=""
         
         self.statusBar.showMessage("Listo!")
     
@@ -966,7 +975,7 @@ class Ui_MainProtoV2(object):
         else:
             self.statusBar.showMessage("Nueva columna cancelada")
 
-#%%
+#%% main
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
