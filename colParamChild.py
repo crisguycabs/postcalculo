@@ -173,6 +173,10 @@ class Ui_ColParamChild(object):
     se activan o desactivan botones en el tablewidget
     '''
     def CheckDimensiones(self):
+        # failsafe
+        if(self.controlcheck==True):
+            return
+
         # parametros seleccionados
         lista=list()
         self.label_3.setText("")
@@ -219,11 +223,13 @@ class Ui_ColParamChild(object):
     Evento de cambio de indice del combobox seleccionado
     '''
     def CambioSeleccion(self):
+        self.controlcheck=True
         indice=self.cmbCategoria.currentIndex()
         if(indice==0):
             self.LlenarTable(self.data)
         else:
             self.LlenarTable(self.data[self.data["categoria"]==self.cmbCategoria.currentText()])
+        self.controlcheck=False
     
     '''
     Se limpia y llena el Qtablewidget segun el dataframe que se pasa como argumento
