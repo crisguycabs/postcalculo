@@ -939,9 +939,21 @@ class Ui_MainProtoV2(object):
                 
                 _nombreCol=self.uiParam.txtNombreColumna.text()
             else:
-                self.statusBar.showMessage("No se incluyó un nombre de la columna")
-                self.error_dialog.showMessage("No se incluyó un nombre de la columna. Se cancela la creación de la nueva columna")
-                return
+                
+                # se verifica que solo exista un unico parametro seleccionado para darle el nombre a la columna
+                lista=list()
+                for i in range(self.uiParam.tableWidget.rowCount()):
+                    item = self.uiParam.tableWidget.item(i, 0)
+                    if item.checkState() == QtCore.Qt.Checked:
+                        # es un parametro o variable?
+                        lista.append(self.uiParam.tableWidget.item(i, 1).text())
+                
+                if len(lista)==1:
+                    _nombreCol = lista[0]
+                else:                
+                    self.statusBar.showMessage("No se incluyó un nombre de la columna")
+                    self.error_dialog.showMessage("No se incluyó un nombre de la columna. Se cancela la creación de la nueva columna")
+                    return
             
             # parametros seleccionados
             lista=list()
