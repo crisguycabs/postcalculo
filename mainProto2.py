@@ -532,8 +532,13 @@ class Ui_MainProtoV2(object):
         
         self.ruta_Json=file_path1
         
-        with open(self.ruta_Json) as json_file:
-            self.sabana = json.load(json_file)
+        try:
+            with open(self.ruta_Json) as json_file:
+                self.sabana = json.load(json_file)
+            self.statusBar.showMessage("Leyendo JSON...")
+        except:
+            self.statusBar.showMessage("Error al intentar leer JSON!")
+            return None
         
         self.LimpiarControles()
         

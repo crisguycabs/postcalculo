@@ -169,6 +169,8 @@ class Ui_ColParamChild(object):
         
         self.label_3.setText("")
         
+        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        
     '''
     se activan o desactivan botones en el tablewidget
     '''
