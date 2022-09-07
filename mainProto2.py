@@ -575,6 +575,7 @@ class Ui_MainProtoV2(object):
         
         self.actionGuardar_JSON.setEnabled(True)
         self.actionGuardar_como.setEnabled(True)
+    
         
     '''
     Guardar JSON en disco como
@@ -876,8 +877,16 @@ class Ui_MainProtoV2(object):
                         
             # se agrega la columna a la lista
             item=""
-            item=item + "Nombre: " + self.sabana[nomcol][0]["NOMBRE_COLUMNA"] + " | "
-            item=item + "Tipo: " + self.sabana[nomcol][0]["TIPO_DATO_GAMS"]
+            # item=item + "Nombre: " + self.sabana[nomcol][0]["NOMBRE_COLUMNA"] + " | "
+            # item=item + "Tipo: " + self.sabana[nomcol][0]["TIPO_DATO_GAMS"]
+            item = item + self.sabana[nomcol][0]["NOMBRE_COLUMNA"] + " | "
+            if isinstance(self.sabana[nomcol][0]["NOMBRE_E_S"], list):
+                for j in range(len(self.sabana[nomcol][0]["NOMBRE_E_S"])):
+                    item = item + self.sabana[nomcol][0]["NOMBRE_E_S"][j] + " "
+                item = item + " | "
+            else:
+                item = item + self.sabana[nomcol][0]["NOMBRE_E_S"] + " | "
+            item = item + self.sabana[nomcol][0]["TIPO_DATO_GAMS"]
             self.lstColumnas.addItem(item)
        
     
@@ -919,6 +928,15 @@ class Ui_MainProtoV2(object):
             
             # nombre de columna
             if(self.uiParam.txtNombreColumna.text()):
+                
+                # se verifica que no exista que no exista una columna con un nombre similar
+                for i in range(self.ncol):
+                    tempnom = "COLUMNA" + str(i+1)
+                    if (self.sabana[tempnom][0]["NOMBRE_COLUMNA"]==self.uiParam.txtNombreColumna.text()):
+                        self.statusBar.showMessage("Nombre de columna inválido...")
+                        self.error_dialog.showMessage("Ya existe una columna con el nombre " + self.uiParam.txtNombreColumna.text() + ". Se cancela la creación de la nueva columna")
+                        return None                             
+                
                 _nombreCol=self.uiParam.txtNombreColumna.text()
             else:
                 self.statusBar.showMessage("No se incluyó un nombre de la columna")
