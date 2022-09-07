@@ -183,7 +183,7 @@
      <x>120</x>
      <y>240</y>
      <width>431</width>
-     <height>20</height>
+     <height>41</height>
     </rect>
    </property>
    <property name="palette">
@@ -201,6 +201,15 @@
       <colorrole role="Text">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
+         <red>255</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="PlaceholderText">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
          <red>255</red>
          <green>0</green>
          <blue>0</blue>
@@ -227,6 +236,15 @@
         </color>
        </brush>
       </colorrole>
+      <colorrole role="PlaceholderText">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
+         <red>255</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
      </inactive>
      <disabled>
       <colorrole role="WindowText">
@@ -247,6 +265,15 @@
         </color>
        </brush>
       </colorrole>
+      <colorrole role="PlaceholderText">
+       <brush brushstyle="NoBrush">
+        <color alpha="128">
+         <red>255</red>
+         <green>0</green>
+         <blue>0</blue>
+        </color>
+       </brush>
+      </colorrole>
      </disabled>
     </palette>
    </property>
@@ -254,13 +281,16 @@
     <enum>Qt::LeftToRight</enum>
    </property>
    <property name="text">
-    <string>Este es un mensaje de error</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Este es un mensaje de errorEste es un mensaje de errorEste es un mensaje de errorEste es un mensaje de errorEste es un mensaje de errorEste es un mensaje de errorEste es un mensaje de errorEste es un mensaje de errorEste es un mensaje de errorEste es un mensaje de errorEste es un mensaje de errorEste es un mensaje de error&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="textFormat">
     <enum>Qt::RichText</enum>
    </property>
    <property name="alignment">
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
