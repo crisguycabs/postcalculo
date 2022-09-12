@@ -1,0 +1,48 @@
+{
+    "MODELO": "Mod1",
+    "VERSION": "V1",
+    "CORRIDA": "C1",
+    "NOMBRE_SABANA": "test5",
+    "DIMENSIONES": [
+        "c",
+        "t"
+    ],
+    "METODO": "MERGE",
+    "COLUMNA1": [
+        {
+            "TIPO_DATO_GAMS": "VARIABLE",
+            "NOMBRE_E_S": [
+                "X_CASHFLOW"
+            ],
+            "TIPO_CAMPO": [
+                "level"
+            ],
+            "NOMBRE_COLUMNA": "Variable1",
+            "FORMULA": "NA"
+        }
+    ],
+    "COLUMNA2": [
+        {
+            "TIPO_DATO_GAMS": "FORMULA",
+            "NOMBRE_E_S": [
+                "X_CASHFLOW",
+                "X_PROFIT"
+            ],
+            "TIPO_CAMPO": [
+                "level",
+                "level"
+            ],
+            "NOMBRE_COLUMNA": "Form1",
+            "FORMULA": "suma"
+        }
+    ],
+    "COLUMNA3": [
+        {
+            "TIPO_DATO_GAMS": "QUERY",
+            "NOMBRE_E_S": [],
+            "TIPO_CAMPO": [],
+            "NOMBRE_COLUMNA": "Query1",
+            "FORMULA": "select"
+        }
+    ]
+}
