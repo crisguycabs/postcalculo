@@ -204,6 +204,11 @@ class Ui_MainProtoV2(object):
         self.actionAcerca_de_Modulo_de_Postcalculo.triggered.connect(self.Acercade)
         
         '''
+        cerrar la aplicación
+        '''
+        # self.actionCerrar.triggered.connect(self.closewin)
+        
+        '''
         guardar json
         '''
         self.actionGuardar_JSON.triggered.connect(self.GuardarJSON)
@@ -785,6 +790,20 @@ class Ui_MainProtoV2(object):
         
         if(Acercade.exec()==QtWidgets.QDialog.Accepted):
             print("Dialogo nueva columna cerrado con exito")
+            
+    '''
+    Cerrar la aplicación
+    '''        
+    def exit_window(self, event):
+        close = QtWidgets.QMessageBox.question(self,
+                                            "Salir?",
+                                            "Está seguro que desea salir?",
+                                            QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
+        if close == QtWidgets.QMessageBox.Yes:
+            # event.accept()
+            sys.exit()
+        else:
+            pass
         
     '''
     Se abre la ventana de nueva columna tip query
@@ -1017,6 +1036,7 @@ if __name__ == "__main__":
     MainProtoV2 = QtWidgets.QMainWindow()
     ui = Ui_MainProtoV2()
     ui.setupUi(MainProtoV2)
+    ui.actionCerrar.triggered.connect(MainProtoV2.close)
     MainProtoV2.show()
     sys.exit(app.exec_())
 
