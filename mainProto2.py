@@ -535,6 +535,10 @@ class Ui_MainProtoV2(object):
         if file_path1 is None:
             return None        
         
+        if len(file_path1)==0:
+            self.statusBar.showMessage("Se canceló la lectura del JSON")
+            return None
+        
         self.ruta_Json=file_path1
         
         try:
