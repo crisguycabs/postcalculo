@@ -10,6 +10,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QAbstractTableModel, Qt
 from PyQt5.QtWidgets import  QTableWidgetItem
 
+LastStateRole = QtCore.Qt.UserRole
+
 class Ui_ColParamChild(object):
     def setupUi(self, ColParamChild):
         ColParamChild.setObjectName("ColParamChild")
@@ -178,10 +180,33 @@ class Ui_ColParamChild(object):
         
         # evento para revisar las dimensiones al cambiar el checked en la tabla
         self.tableWidget.itemChanged.connect(self.CheckDimensiones)
+        self.tableWidget.cellChanged.connect(self.onCellChanged)
         
         self.label_3.setText("")
         
         self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        
+        
+    '''
+    Cambio en las celdas
+    '''    
+    def onCellChanged(self, row, column):
+        
+        if self.chkFormula.isChecked():
+            item = self.tableWidget.item(row, column)
+            item2 = self.tableWidget.item(row, column +1)
+            lastState = item.data(LastStateRole)
+            currentState = item.checkState()
+            if currentState != lastState:
+                # print("changed: ")
+                if currentState == QtCore.Qt.Checked:
+                    # print("checked")
+                    texto = self.txtFormula.toPlainText()
+                    texto = texto + " " + item2.text()
+                    self.txtFormula.setPlainText(texto)
+                
+                item.setData(LastStateRole, currentState)
+    
         
     '''
     se activan o desactivan botones en el tablewidget
