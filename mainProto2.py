@@ -73,7 +73,7 @@ class Ui_MainProtoV2(object):
         self.label_3.setObjectName("label_3")
         self.cmbMetodo = QtWidgets.QComboBox(self.grpSabana)
         self.cmbMetodo.setEnabled(True)
-        self.cmbMetodo.setGeometry(QtCore.QRect(255, 45, 113, 22))
+        self.cmbMetodo.setGeometry(QtCore.QRect(256, 45, 111, 22))
         self.cmbMetodo.setObjectName("cmbMetodo")
         self.cmbMetodo.addItem("")
         self.cmbMetodo.addItem("")
@@ -107,6 +107,12 @@ class Ui_MainProtoV2(object):
         self.btnModAbstracto.setEnabled(False)
         self.btnModAbstracto.setGeometry(QtCore.QRect(255, 20, 113, 20))
         self.btnModAbstracto.setObjectName("btnModAbstracto")
+        
+        self.btnSave = QtWidgets.QPushButton(self.grpSabana)
+        self.btnSave.setEnabled(True)
+        self.btnSave.setGeometry(QtCore.QRect(255, 72, 113, 20))
+        self.btnSave.setObjectName("btnSave")
+        
         MainProtoV2.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainProtoV2)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 400, 21))
@@ -212,6 +218,7 @@ class Ui_MainProtoV2(object):
         guardar json
         '''
         self.actionGuardar_JSON.triggered.connect(self.GuardarJSON)
+        self.btnSave.clicked.connect(self.GuardarJSON)
         
         '''
         guardar json como
@@ -258,6 +265,7 @@ class Ui_MainProtoV2(object):
         self.label.setText(_translate("MainProtoV2", "Modelo:"))
         self.label_2.setText(_translate("MainProtoV2", "Version:"))
         self.btnModAbstracto.setText(_translate("MainProtoV2", "Seleccionar Modelo"))
+        self.btnSave.setText(_translate("MainProtoV2", "Guardar Sabana"))
         self.menuArchivo.setTitle(_translate("MainProtoV2", "Archivo"))
         self.menuAcerca.setTitle(_translate("MainProtoV2", "Acerca de..."))
         self.actionNuevo_JSON.setText(_translate("MainProtoV2", "Nuevo JSON"))
