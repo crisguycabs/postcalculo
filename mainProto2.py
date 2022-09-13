@@ -697,9 +697,8 @@ class Ui_MainProtoV2(object):
         
         # escoger la ruta de guardado del JSON
         file_path1 = filedialog.asksaveasfile(title="Guardar nuevo JSON",mode='w', defaultextension=".json")
-        if file_path1 is None:
-            return None
-        
+        if (file_path1 is None):
+            return None        
         
         file_path1.close()
         
@@ -708,8 +707,22 @@ class Ui_MainProtoV2(object):
         # escoger el modelo abstracto
         file_path2 = filedialog.askopenfilename(title='Seleccione el modelo abstracto...',
                                                         filetypes=[("Archivos excel", ".xlsx .xls")])
-        if file_path2 is None:
+        
+        
+        if (file_path2 is None) or (len(file_path2) == 0):
+            self.statusBar.showMessage("Se canceló la creación del nuevo JSON.")
             return None
+        
+        # limpiando variables y cache
+        self.ruta_Json=""
+        self.ruta_modelo=""
+        self.nombre_sabana=""
+        self.data=""
+        self.sabana=""
+        self.ncol=0
+        self.dimensiones=""
+        self.nombre=""
+        self.l=0
         
         self.statusBar.showMessage("Procesando modelo abstracto...")
         

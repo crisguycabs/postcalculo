@@ -37,6 +37,7 @@ class Ui_ColParamChild(object):
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(8)
         self.tableWidget.setRowCount(0)
+        self.tableWidget.setSortingEnabled(True)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
